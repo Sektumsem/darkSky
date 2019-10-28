@@ -5,22 +5,27 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="css/style.css">
-    <title>Dark Sky API</title>
+    <title>Numbers API</title>
 </head>
 <body>
-    <div class="location">
-        <h1 class="location-timezone">Timezone</h1>
-        <canvas class="icon" width="128" height="128"></canvas>
-    </div>
+    <!--http://numbersapi.com/#random/math-->
+    <img src="css/bg.jpg" width="1920" height="1080">
+    <span id="number-fact"></span>
 
-    <div class="temperature">
-        <div class="degree-section">
-            <h2 class="temperature-degree">50</h2>
-            <span>F</span>
-    </div>
-    <div class="temperature-description">It's October</div>
+    <script>
+        function showNumber(str) {
+            document.getElementById('number-fact').innerText = str;
+        }
+    
+        (function() {
+            var scriptTag = document.createElement('script');
+            scriptTag.async = true;
+            scriptTag.src = "http://numbersapi.com/42/math?callback=showNumber";
+            document.body.appendChild(scriptTag);
+        })();
+    </script>
+
 
     <script src="app.js"></script>
-    <script src="skycons.js"></script>
 </body>
 </html>
